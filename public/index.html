@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Sharing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="message"></div>
+  <!-- <div class="container">
+    <h1>Sharing</h1>
+    <form id="uploadForm">
+      <label for="fileInput">Choose a file to upload:</label>
+      <input type="file" id="fileInput" name="file" required>
+      <button type="submit">Upload</button>
+    </form>
+    <div id="result" class="hidden">
+      <h2>File Uploaded Successfully</h2>
+      <p>Sharing link:</p>
+      <input type="text" id="fileLink" value="" hidden />
+      <button type="button" id="copyButton" onclick="CopyToClipboard()"></button>
+    </div>
+  </div> -->
+  <div id="success-message"> </div>
+  <div id="container" class="container">
+    <div id="link-container">
+      <input type="text" value="" id="link" readonly />
+      <button onclick="copyToClipboard()">Copy</button>
+    </div>
+    <form enctype="multipart/form-data"  onsubmit="submitForm(event)">
+      <label for="file" id="label" style="cursor: pointer;">
+        <div id="progress">
+          <span> Drag and Drop / Choose File </span>
+        </div>
+        <input type="file" name="file" id="file" hidden onchange="onChange(event)" required>
+      </label>
+      <button type="submit" name="submit" id="submit-btn"> Upload File </button>
+    </form>
+    <div id="fileData">
+    </div>
+    <div id="success">
+    </div>
+    <div id="error"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

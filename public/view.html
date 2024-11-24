@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {{$FileName}} Details</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div id="message"></div>
+    <div class="container">
+        <h1>File Details</h1>
+        <p><strong>File Name:</strong> {{$FileName}}</p>
+        <p><strong>File Size:</strong> {{$FileSize}}</p>
+        <p><strong>Extension:</strong> {{$FileExt}}</p>
+        <p><strong>Upload Date:</strong> {{$UploadDate}}</p>
+        <input type="text" id="urlInput" name="Url" value="{{$DownloadLink}}" hidden>
+        <input type="text" id="FileName" name="FileName" value="{{$FileName}}" hidden>
+        <button type="submit" class="download-button" id="download-btn" onclick="downloadFile()">Download File</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/script.js"></script>
+</body>
+
+</html>
